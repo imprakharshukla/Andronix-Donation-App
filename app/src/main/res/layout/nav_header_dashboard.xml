@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="andronix"
+                android:textColor="@color/primaryTextColorDark"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_bold"
+                android:text=".app"
+                android:textColor="@color/orange"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_bold"
+            android:text="Let's Linux!"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:gravity="start"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:paddingTop="5dp">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:layout_marginEnd="10dp"-->
+    <!--                android:layout_marginBottom="5dp"-->
+    <!--                android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
+    <!--                android:shape="ring"-->
+    <!--                app:cardCornerRadius="25dp"-->
+    <!--                app:cardElevation="2dp">-->
+
+
+    <!--                <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                    android:id="@+id/profileImage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    tools:src="@drawable/ic_man"-->
+    <!--                    tools:visibility="visible" />-->
+
+
+    <!--            </androidx.cardview.widget.CardView>-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginStart="10dp"-->
+    <!--            android:layout_marginTop="5dp"-->
+    <!--            android:gravity="center_vertical"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/name"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:ellipsize="end"-->
+    <!--                android:fontFamily="@font/product_sans_bold"-->
+    <!--                android:maxLines="1"-->
+    <!--                android:paddingRight="30dp"-->
+    <!--                android:text="@string/loadingkl"-->
+    <!--                android:textColor="@color/primaryTextColor"-->
+    <!--                android:textSize="14dp"-->
+    <!--                app:lineHeight="25dp"-->
+    <!--                tools:text="Email Authenticated" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/email"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="-10dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:ellipsize="end"-->
+    <!--                android:fontFamily="@font/product_sans_regular"-->
+    <!--                android:maxLines="1"-->
+    <!--                android:paddingRight="30dp"-->
+    <!--                android:text="@string/loadingkl"-->
+    <!--                android:textColor="@color/primaryTextColor"-->
+    <!--                android:textSize="13dp"-->
+    <!--                app:lineHeight="25dp" />-->
+    <!--            &lt;!&ndash;-->
+
+    <!--                        <androidx.cardview.widget.CardView-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="-10dp"-->
+    <!--                            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
+    <!--                            android:shape="ring"-->
+    <!--                            app:cardBackgroundColor="@color/orange"-->
+    <!--                            app:cardCornerRadius="3dp"-->
+    <!--                            app:cardElevation="2dp">-->
+    <!--            &ndash;&gt;-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/prem_status"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="-10dp"-->
+    <!--                android:ellipsize="end"-->
+    <!--                android:fontFamily="@font/product_sans_regular"-->
+    <!--                android:maxLines="1"-->
+    <!--                android:paddingRight="30dp"-->
+    <!--                android:text="Loading..."-->
+    <!--                android:textColor="@color/orange"-->
+    <!--                android:textSize="13dp"-->
+    <!--                app:lineHeight="25dp" />-->
+    <!--            &lt;!&ndash;       </androidx.cardview.widget.CardView>&ndash;&gt;-->
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="30dp"-->
+    <!--        android:layout_marginTop="25dp"-->
+    <!--        android:layout_marginEnd="30dp"-->
+    <!--        android:fontFamily="@font/product_sans_regular"-->
+    <!--        android:text="@string/andronix"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="40dp" />-->
+
+</LinearLayout>

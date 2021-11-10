@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff8b25</color>
+    <color name="colorPrimaryDark">#c65c00</color>
+    <color name="colorAccent">#ffbc57</color>
+    <color name="blafck">#000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="header">#fff</color>
+    <color name="roundedBottomSheetPrimaryBackground">@color/cardBackgroundColor</color>
+    <color name="roundedBottomSheetPrimaryNavigationBarColor">@color/cardBackgroundColor</color>
+
+    <!--Colors used in commands-->
+
+    <color name="orange">#FF8B25</color>
+    <color name="pastel_orange">#92FF8B25</color>
+    <color name="blue">#299AD4</color>
+    <color name="dark_blue">#296DD4</color>
+    <color name="red">#EE0F0F</color>
+
+    <color name="toolbarColor">@color/colorPrimary</color>
+    <color name="primaryTextColor">#555555</color>
+    <color name="primaryTextColorDark">#1d2936</color>
+    <color name="cardBackgroundColor">#fff</color>
+    <color name="cardBackgroundColorCustom">#F4F4F4</color>
+    <color name="cardBackgroundColorCustomProfile">#E3E3E3</color>
+    <color name="iconTintColor">#373737</color>
+    <color name="dividerColor">#DCDCDC</color>
+    <color name="colorBackground">#ffffff</color>
+
+    <color name="bottomsheet_bg">#FFF</color>
+
+    <color name="snackbar_bg">#000</color>
+    <color name="snackbar_text">@color/white</color>
+
+    <!--<color name="navDrawerBackground">@color/md_white_1000</color>-->
+
+    <color name="debian">#D70751</color>
+    <color name="green">#34BE5B</color>
+    <color name="manjaro_light">#574CAF50</color>
+    <color name="void_linux">#478061</color>
+    <color name="fedora">#294172</color>
+    <color name="kali_black">#0E1215</color>
+    <color name="alpine">#0B6D92</color>
+    <color name="arch">#299AD4</color>
+    <color name="awesome">#535d6c</color>
+    <color name="openbox">#FF4276B7</color>
+    <color name="discord">#7289da</color>
+
+    <color name="xfce">#034E75</color>
+    <color name="lxqt">@color/blue</color>
+    <color name="lxde">#3F51B5</color>
+    <color name="e_de">@color/primaryTextColor</color>
+
+
+    <!-- Shimmer Effects-->
+    <color name="shimmer_grey">#E8E8E8</color>
+    <color name="shimmer_grey_2">#DFDFDF</color>
+    <color name="purple">#8e44ad</color>
+    <color name="yellow">#f1c40f</color>
+    <color name="turquoise">#1abc9c</color>
+    <color name="icon_unselected">#818181</color>
+    <color name="shimmer_text_dark">#A8A8A8</color>
+    <color name="darker_gray">#B5B5B5</color>
+    <color name="lilac">#424faf</color>
+
+
+</resources>

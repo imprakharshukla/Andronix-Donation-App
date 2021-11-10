@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Andronix Donation</string>
+    <string name="purchase_successful">Your purchase was successful. Thank you for your donation. If you have any queries or want to report something unusual, we are available at support@andronix.app.</string>
+    <string name="payment_failed">Your purchase could not be completed. For assistance, contact us at support@andronix.app if your payment source was charged. You can also try initiating the payment again.</string>
+    <string name="build_amp_version"><![CDATA[Build & Version]]></string>
+    <string name="andronix_is_now_a_complete_linux_on_android_utility_we_have_all_the_main_stream_distros_and_well_as_many_great_features_such_as_abliliy_to_save_your_commands_so_that_you_don_t_forget_them_again_sync_them_to_the_cloud_and_access_them_on_any_device_with_an_intenet_connection_we_now_also_have_a_webapp_for_the_same_purpose_from_downloading_offline_to_priority_support_our_premium_features_are_unmatched_in_the_whole_android_market">Andronix is now a complete Linux on Android utility. We have all the mainstream distributions and many great features, such as the ability to save your commands so that you don\'t forget them again. Sync them to the cloud and access them on any device with an internet connection. We now also have a web app for the same purpose. From downloading offline to priority support, our premium features are unmatched in the whole android market.</string>
+
+    <string name="all_the_logos_and_trademarks_used_in_the_app_are_the_are_the_properties_of_their_respective_owners">All the logos and trademarks used in the app are the properties of their respective owners</string>
+
+</resources>

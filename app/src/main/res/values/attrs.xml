@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="maxLinesForDesp" format="integer" />
+    <attr name="title_text" format="string" />
+    <attr name="description_text" format="string" />
+    <attr name="logo_image" format="reference" />
+    <attr name="logo_color" format="reference" />
+    <attr name="isSelected" format="boolean" />
+    <declare-styleable name="CustomItemView">
+        <attr name="title_text" />
+        <attr name="description_text" />
+        <attr name="logo_image" />
+        <attr name="logo_color" />
+        <attr name="maxLinesForDesp" />
+        <attr name="isSelected" />
+        <attr name="amount" format="string" />
+    </declare-styleable>
+
+
+</resources>

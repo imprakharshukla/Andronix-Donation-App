@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#545454</color>
+    <color name="colorPrimaryDark">#414141</color>
+    <color name="colorAccent">#ffbc57</color>
+    <color name="toolbarColor">#ff8b25</color>
+    <color name="primaryTextColor">#c9c9c9</color>
+    <color name="primaryTextColorDark">#fff</color>
+    <color name="cardBackgroundColor">#464646</color>
+    <color name="roundedBottomSheetPrimaryBackground">#2B2B2B</color>
+    <color name="roundedBottomSheetPrimaryNavigationBarColor">#2B2B2B</color>
+    <color name="dividerColor">#373737</color>
+    <color name="colorBackground">#262626</color>
+    <color name="header">#2E2E2E</color>
+    <color name="cardBackgroundColorCustom">#383838</color>
+    <color name="cardBackgroundColorCustomProfile">#383838</color>z
+    <color name="iconTintColor">#D8D8D8</color>
+    <color name="bottomsheet_bg">#464646</color>
+
+
+    <color name="snackbar_bg">#000</color>
+    <color name="snackbar_text">@color/white</color>
+
+    <!--<color name="navDrawerBackground">@color/md_white_1000</color>-->
+
+    <color name="white">#fff</color>
+    <color name="fedora">#294172</color>
+    <color name="kali_black">#0E1215</color>
+    <color name="alpine">#0B6D92</color>
+    <color name="arch">#299AD4</color>
+    <color name="debian">#D70751</color>
+
+    <color name="xfce">#034E75</color>
+    <color name="lxqt">@color/blue</color>
+    <color name="lxde">#3F51B5</color>
+    <color name="e_de">@color/primaryTextColor</color>
+
+
+    <!-- Shimmer Effects-->
+    <color name="shimmer_grey">#4C4C4C</color>
+    <color name="shimmer_grey_2">#3C3C3C</color>
+
+    <color name="dark_blue">#296DD4</color>
+    <color name="purple">#8e44ad</color>
+    <color name="turquoise">#1abc9c</color>
+    <color name="yellow">#f1c40f</color>
+    <color name="icon_unselected">#818181</color>
+    <color name="shimmer_text_dark">#757575</color>
+
+</resources>
