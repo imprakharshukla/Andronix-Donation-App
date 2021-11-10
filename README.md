@@ -13,12 +13,13 @@ This app tries to combine all the latest Android tech that you can possibly thin
 1. Kotlin Coroutines
 2. Kotlin StateFlow
 3. Kotlin SharedFlow
-4. Single-Activity Principle
-5. Jetpack Navigation Component
-6. Jetpack Android Hilt (replaced Dagger 2.0)
-7. MVVM architecture
-8. Fragment, ViewModel and Repository approach with dependency injection
-9. Integration with the latest Google Play Billing libraries
+4. Jetpack Preferences Datastore;
+5. Single-Activity Principle
+6. Jetpack Navigation Component
+7. Jetpack Android Hilt (replaced Dagger 2.0)
+8. MVVM architecture
+9. Fragment, ViewModel and Repository approach with dependency injection
+10. Integration with the latest Google Play Billing libraries
  
 
 ## What in the future?
