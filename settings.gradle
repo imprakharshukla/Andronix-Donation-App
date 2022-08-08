@@ -11,3 +11,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Andronix Donation"
 include ':app'
+include ':casher-android'

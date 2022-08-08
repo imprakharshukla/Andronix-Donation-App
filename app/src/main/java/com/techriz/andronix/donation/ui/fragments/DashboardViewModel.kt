@@ -1,5 +1,10 @@
 package com.techriz.andronix.donation.ui.fragments
 
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ClickableSpan
+import android.text.style.StyleSpan
+import android.view.View
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -28,10 +33,38 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
     }
 
     fun getUserPfp(): String {
-        val email = getUserEmail() ?: ('a'..'z').random() + (0..1000).random()
-            .toString() + ('a'..'z').random() + ('a'..'z').random()
+        val email = getUserEmail() ?: (('a'..'z').random() + (0..1000).random()
+            .toString() + ('a'..'z').random() + ('a'..'z').random())
         return Firebase.auth.currentUser?.photoUrl?.toString()
             ?: "https://avatars.dicebear.com/api/jdenticon/$email.svg"
+    }
+
+    fun getWarningSpans(
+
+        text: String,
+        downloadLinkFunction: () -> Unit,
+    ): SpannableString {
+        val ss = SpannableString(text)
+        val clickableSpan1: ClickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                downloadLinkFunction()
+            }
+        }
+        val styleSpan = StyleSpan(android.graphics.Typeface.BOLD)  // Span to make text bold
+
+        ss.setSpan(
+            clickableSpan1,
+            ss.indexOf("here"),
+            ss.indexOf("here") + 4,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        ss.setSpan(
+            styleSpan,
+            ss.indexOf("and"),
+            ss.indexOf("App"),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        return ss
     }
 
 

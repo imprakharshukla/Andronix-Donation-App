@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog
 import com.techriz.andronix.donation.R
 import com.techriz.andronix.donation.databinding.LoaderSheetBinding
+import javax.inject.Inject
 
 
 class Loader(val context: Context) {

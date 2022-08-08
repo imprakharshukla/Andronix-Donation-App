@@ -48,6 +48,20 @@ object ActionUtils {
         }
     }
 
+
+    open fun getBrowser(context: Context, link: String?) {
+        try {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+            context.startActivity(browserIntent)
+        } catch (e: java.lang.Exception) {
+            Toast.makeText(
+                context,
+                "No browser found. Please install one to continue.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
     open fun showToast(message: String, context: Context, isLong: Boolean = false) {
         val length = when (isLong) {
             true -> Toast.LENGTH_LONG
@@ -255,19 +269,6 @@ object ActionUtils {
     }
 
 
-    open fun getBrowser(context: Context, link: String?) {
-        try {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
-            context.startActivity(browserIntent)
-        } catch (e: java.lang.Exception) {
-            Toast.makeText(
-                context,
-                "No browser found. Please install one to continue.",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-    }
-
 
     fun String.openYoutubeLink(context: Context) {
         try {
@@ -339,8 +340,6 @@ object ActionUtils {
         shareIntent.type = "text/plain"
         context.startActivity(Intent.createChooser(shareIntent, "Show us love Via"))
     }
-
-
 
 
     fun String.log() {

@@ -5,6 +5,7 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -23,6 +24,7 @@ import com.techriz.andronix.donation.databinding.PurchaseSuccessDialogBinding
 import com.techriz.andronix.donation.repository.BillingRepository
 import com.techriz.andronix.donation.repository.PurchaseStateClass
 import com.techriz.andronix.donation.repository.billingLog
+import com.techriz.andronix.donation.ui.fragments.Loader
 import com.techriz.andronix.donation.utils.*
 import com.techriz.andronix.donation.utils.ActionUtils.showSnackbar
 import com.techriz.andronix.donation.utils.Constants.ANDRONIX_SUPPORT_EMAIL
@@ -31,10 +33,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
-import studio.com.techriz.andronix.ui.Loader
+
 import javax.inject.Inject
 
 @InternalCoroutinesApi
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class PayFragment : Fragment(R.layout.pay_fragment) {
     private lateinit var binding: PayFragmentBinding
@@ -49,7 +52,7 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
     @Inject
     lateinit var loader: Loader
 
-    @ExperimentalCoroutinesApi
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,6 +68,7 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
         if (sku != null) {
             when (sku) {
                 SkuInfo.PRIMUS().sku_id -> {
+
                     SkuInfo.PRIMUS().apply {
                         binding.buyTitle.text = title
                         binding.buyDesc.text = desc
@@ -113,6 +117,7 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
                 }
             }
         }
+
     }
 
     @ExperimentalCoroutinesApi
@@ -184,6 +189,9 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
                     is PurchaseStateClass.Error -> {
                         withContext(Dispatchers.Main) {
                             loader.stopLoading()
+                            println(
+                                "Billing Error ${it.message}"
+                            )
                             "Billing error ${it.message}".billingLog(true)
                             showPostPurchaseDialog(false, it.message)
                         }

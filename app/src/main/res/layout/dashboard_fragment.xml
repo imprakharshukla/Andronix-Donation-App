@@ -85,6 +85,18 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/dashboard_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/product_sans_regular"
+            android:text="@string/warning_text_dashboard"
+            android:textAlignment="center"
+            android:textColor="@color/primaryTextColorDark" />
+
         <com.techriz.andronix.donation.views.CustomItemView
             android:id="@+id/primus_card"
             android:layout_width="match_parent"

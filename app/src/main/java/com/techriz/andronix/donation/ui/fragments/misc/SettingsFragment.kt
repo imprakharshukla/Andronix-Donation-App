@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.github.florent37.viewanimator.ViewAnimator
 import com.techriz.andronix.donation.R
 import com.techriz.andronix.donation.databinding.SettingsFragmentBinding
+import com.techriz.andronix.donation.ui.fragments.Loader
 import com.techriz.andronix.donation.utils.Constants.DARK_MODE
 import com.techriz.andronix.donation.utils.Constants.DEVICE_MODE
 import com.techriz.andronix.donation.utils.Constants.LIGHT_MODE
@@ -25,7 +26,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import studio.com.techriz.andronix.ui.Loader
+
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
