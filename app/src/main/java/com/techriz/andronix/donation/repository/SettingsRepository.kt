@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.techriz.andronix.donation.utils.Constants.DARK_MODE
+import com.techriz.andronix.donation.utils.Constants.LIGHT_MODE
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -33,9 +34,7 @@ class SettingsRepository @Inject constructor(
 
 
     suspend fun getTheme(): String {
-        val theme = context.settingsDataStore.getValueAsFlow(THEME_KEY, DARK_MODE).first()
-        println("GetTheme $theme")
-        return theme
+        return context.settingsDataStore.getValueAsFlow(THEME_KEY, DARK_MODE).first()
     }
 
     fun getThemeLive(): Flow<String> {

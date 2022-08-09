@@ -2,6 +2,7 @@ package com.techriz.andronix.donation.ui.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
@@ -22,6 +23,7 @@ import com.techriz.andronix.donation.R
 import com.techriz.andronix.donation.databinding.DashboardFragmentBinding
 import com.techriz.andronix.donation.databinding.LoginFirstSheetBinding
 import com.techriz.andronix.donation.databinding.UserInfoBottomsheetBinding
+import com.techriz.andronix.donation.utils.ActionUtils
 import com.techriz.andronix.donation.utils.NavigationAnimations
 import com.techriz.andronix.donation.utils.NavigationAnimations.safeNavigate
 import com.techriz.andronix.donation.utils.SkuInfo
@@ -30,13 +32,25 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardFragment : Fragment(R.layout.dashboard_fragment) {
+    private val ANDRONIX_PLAY_STORE_URL: String = "https://play.andronix.app"
     private lateinit var binding: DashboardFragmentBinding
-    val viewModel: DashboardViewModel by viewModels();
+    val viewModel: DashboardViewModel by viewModels()
+
     @SuppressLint("WrongConstant")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = DashboardFragmentBinding.bind(view)
+
+
+        binding.dashboardWarning.movementMethod = LinkMovementMethod.getInstance()
+        binding.dashboardWarning.text = viewModel.getWarningSpans(
+            requireContext().getString(
+                R.string.warning_text_dashboard
+            )
+        ) {
+            ActionUtils.getBrowser(requireContext(), ANDRONIX_PLAY_STORE_URL)
+        }
 
 
         binding.hamMenu.setOnClickListener {

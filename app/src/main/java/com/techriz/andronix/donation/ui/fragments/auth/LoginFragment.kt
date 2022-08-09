@@ -18,6 +18,7 @@ import com.techriz.andronix.donation.R
 import com.techriz.andronix.donation.databinding.LoginFragmentBinding
 import com.techriz.andronix.donation.repository.AuthStateClass
 import com.techriz.andronix.donation.repository.authLog
+import com.techriz.andronix.donation.ui.fragments.Loader
 import com.techriz.andronix.donation.utils.ActionUtils
 import com.techriz.andronix.donation.utils.ActionUtils.showSnackbar
 import com.techriz.andronix.donation.utils.Constants.ANDRONIX_PRIVACY
@@ -28,7 +29,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
-import studio.com.techriz.andronix.ui.Loader
+
 import studio.com.techriz.andronix.ui.PasswordResetFragment
 import javax.inject.Inject
 
@@ -50,6 +51,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
     lateinit var passwordResetSheet: PasswordResetFragment
 
     @Inject
+
     lateinit var loader: Loader
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

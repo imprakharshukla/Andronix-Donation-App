@@ -44,9 +44,11 @@ class PayViewModel @Inject constructor(
     @ExperimentalCoroutinesApi
     fun getFlowDetails(): FlowDetails {
         val uid = Firebase.auth.currentUser?.uid
-        val email = Firebase.auth.currentUser?.email
-        "UID $uid".log()
-        "Email $email".log()
+        var email = Firebase.auth.currentUser?.email
+        if (!uid.isNullOrEmpty() && email.isNullOrEmpty()) {
+            //giving this a temporary email is since the signing is anonymous
+            email = "anonymous@sign.in"
+        }
         return if (!uid.isNullOrEmpty() && !email.isNullOrEmpty()) {
             println("SKU details $skuDetails")
             println("Email $email")

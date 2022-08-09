@@ -191,7 +191,11 @@ class BillingRepository @Inject constructor(
     private suspend fun verifyPurchase(purchase: Purchase) {
         try {
             val response =
-                purchaseAPI.getPurchaseVerification(purchase.sku, purchase.purchaseToken, "true")
+                purchaseAPI.getPurchaseVerification(
+                    purchase.skus.first(),
+                    purchase.purchaseToken,
+                    "true"
+                )
                     .awaitResponse()
             if (response.isSuccessful && response.body() != null) {
                 response.body()?.orderID.let { orderIdFromServer ->
