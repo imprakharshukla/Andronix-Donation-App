@@ -16,7 +16,7 @@ android {
         applicationId "com.techriz.andronix.donation"
         minSdk 24
         targetSdk 31
-        versionCode 15
+        versionCode 16
         versionName "3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
