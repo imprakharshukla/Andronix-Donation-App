@@ -1,5 +1,6 @@
 package com.techriz.andronix.donation.ui.fragments.commerce
 
+import android.app.Dialog
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
@@ -43,6 +44,7 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
     private lateinit var binding: PayFragmentBinding
 
     private val viewModel: PayViewModel by viewModels()
+    private var dialog: RoundedBottomSheetDialog? = null
     private lateinit var billingJob: Job
 
 
@@ -204,40 +206,44 @@ class PayFragment : Fragment(R.layout.pay_fragment) {
     private fun showPostPurchaseDialog(isSuccessful: Boolean, error: String = "") {
         if (isSuccessful) {
             val binding = PurchaseSuccessDialogBinding.inflate(layoutInflater)
-            val dialog = RoundedBottomSheetDialog(requireContext())
-            dialog.setContentView(binding.root)
-            binding.close.setOnClickListener {
-                dialog.dismiss()
-            }
-            binding.successSupportText.text =
-                viewModel.getSupportSpannableTextSuccess(requireContext().getString(R.string.purchase_successful)) {
-                    ActionUtils.launchSendEmailIntent(
-                        "Purchase Support",
-                        "",
-                        requireContext(),
-                        arrayOf(ANDRONIX_SUPPORT_EMAIL)
-                    )
+            dialog = RoundedBottomSheetDialog(requireContext())
+            if (dialog != null) {
+                dialog!!.setContentView(binding.root)
+                binding.close.setOnClickListener {
+                    dialog!!.dismiss()
                 }
-            binding.close.setOnClickListener { dialog.dismiss() }
-            dialog.show()
+                binding.successSupportText.text =
+                    viewModel.getSupportSpannableTextSuccess(requireContext().getString(R.string.purchase_successful)) {
+                        ActionUtils.launchSendEmailIntent(
+                            "Purchase Support",
+                            "",
+                            requireContext(),
+                            arrayOf(ANDRONIX_SUPPORT_EMAIL)
+                        )
+                    }
+                binding.close.setOnClickListener { dialog!!.dismiss() }
+                dialog!!.show()
+            }
         } else {
-            val binding = PurchaseFailedDialogBinding.inflate(layoutInflater)
-            val dialog = RoundedBottomSheetDialog(requireContext())
-            dialog.setContentView(binding.root)
-            binding.close.setOnClickListener {
-                dialog.dismiss()
-            }
-            binding.failedSupportText.text =
-                viewModel.getSupportSpannableTextFailed(requireContext().getString(R.string.payment_failed)) {
-                    ActionUtils.launchSendEmailIntent(
-                        "Purchase Support",
-                        "Error - $error \n\n Please add your message below this. \n\n",
-                        requireContext(),
-                        arrayOf(ANDRONIX_SUPPORT_EMAIL)
-                    )
+            if (dialog != null) {
+                val binding = PurchaseFailedDialogBinding.inflate(layoutInflater)
+                dialog = RoundedBottomSheetDialog(requireContext())
+                dialog!!.setContentView(binding.root)
+                binding.close.setOnClickListener {
+                    dialog!!.dismiss()
                 }
-            binding.close.setOnClickListener { dialog.dismiss() }
-            dialog.show()
+                binding.failedSupportText.text =
+                    viewModel.getSupportSpannableTextFailed(requireContext().getString(R.string.payment_failed)) {
+                        ActionUtils.launchSendEmailIntent(
+                            "Purchase Support",
+                            "Error - $error \n\n Please add your message below this. \n\n",
+                            requireContext(),
+                            arrayOf(ANDRONIX_SUPPORT_EMAIL)
+                        )
+                    }
+                binding.close.setOnClickListener { dialog!!.dismiss() }
+                dialog!!.show()
+            }
         }
     }
 

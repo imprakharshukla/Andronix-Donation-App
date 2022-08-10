@@ -175,15 +175,31 @@ class BillingRepository @Inject constructor(
     }
 
 
-    private fun consumePurchase(purchase: Purchase) {
+    suspend fun consumePurchase(purchase: Purchase) {
         val consumeParams = ConsumeParams.newBuilder()
             .setPurchaseToken(purchase.purchaseToken)
             .build()
+//
+//        billingClient.consumeAsync(consumeParams) { billingResult, _ ->
+//            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+//                "Purchase consumed".log()
+//                _purchaseState.value = PurchaseStateClass.Consumed
+//            }
+//        }
 
-        billingClient.consumeAsync(consumeParams) { billingResult, _ ->
-            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                "Purchase consumed".log()
-                _purchaseState.value = PurchaseStateClass.Consumed
+        val consumeResult = withContext(Dispatchers.IO) {
+            billingClient.consumePurchase(consumeParams)
+        }
+
+        if (consumeResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+            "Purchase ${purchase.orderId} has been consumed!".log()
+            _purchaseState.value = PurchaseStateClass.Consumed
+        } else {
+            consumeResult.billingResult.apply {
+                "There was an error consuming the purchase ${purchase.orderId} with error code ${responseCode} and ${debugMessage}".log()
+                _purchaseState.value = PurchaseStateClass.Error(
+                    "The app was not able to acknowledge the purchase. Please try again."
+                )
             }
         }
     }

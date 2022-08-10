@@ -50,7 +50,9 @@
                     android:layout_marginBottom="25dp"
                     android:visibility="visible"
                     app:lottie_autoPlay="true"
-                    app:lottie_fileName="thank_you.json" />
+                    app:lottie_fileName="done-payment-lottie.json"
+                    app:lottie_loop="false"
+                    app:lottie_speed="0.5" />
 
                 <TextView
                     android:layout_width="match_parent"
